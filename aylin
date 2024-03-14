@@ -22,6 +22,12 @@ static By Invalidmessage=By.cssSelector(".oxd-text.oxd-text--p.oxd-alert-content
         errormessageText = errormessage.getText();
         assertEquals(errormessage, "Invalid credentials\n");
 
+ //●to check the "word"
+driver.findElement(myinfobutton).click();
+        WebElement newname=driver.findElement(newnametitle);
+        String newnametext=newname.getText();
+        assertEquals(newnametext,"a ak");
+
 
 //●scroll page down
 JavascriptExecutor js=(JavascriptExecutor) driver;
