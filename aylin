@@ -23,6 +23,14 @@ static By Invalidmessage=By.cssSelector(".oxd-text.oxd-text--p.oxd-alert-content
         assertEquals(errormessage, "Invalid credentials\n");
 
 
+
+//●select and delete words in the box
+WebElement firstname = driver.findElement(By.cssSelector("input[placeholder='First Name']"));
+        firstname.sendKeys(Keys.CONTROL + "a");
+        firstname.sendKeys(Keys.DELETE);
+
+
+
 //●to check the product if it is true
 static By check=By.cssSelector("span[class='a-']");
 public static void checkcart() {
