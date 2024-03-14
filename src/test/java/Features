@@ -1,0 +1,15 @@
+@SauceDemoMart
+Feature: SauceDemoMart Check Test Cases
+
+
+  @AllEmpty
+  Scenario Outline: Empty Username & Empty Password
+    Given User at home page
+    When  Click login button
+    Then  Check "<error>" message about username
+    Examples:
+      |error                    |
+      |Username is required     |
+
+
+  
