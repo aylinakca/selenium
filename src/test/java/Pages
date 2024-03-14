@@ -17,10 +17,11 @@ public class LoginPage {
         this.wait = new WebDriverWait(driver, 10);
         this.elementHelper = new ElementHelper(driver); }
 
-     static By loginbutton=By.cssSelector("#login-button");
+    static By loginbutton=By.cssSelector("#login-button");
     By errorMessage=By.cssSelector("h3[data-test='error']");
     By usernamebox=By.cssSelector("#user-name");
     By passwordd=By.cssSelector("#password");
+    By producttext=By.cssSelector(".title");
 
 
 
@@ -62,6 +63,21 @@ public class LoginPage {
 
     public void dontmatchmessage(String dontmatch) {
         elementHelper.checkVisible(errorMessage);
+
+    }
+
+    public void writecorrectusername(String correctusername) {
+        driver.findElement(usernamebox).click();
+        elementHelper.sendKey(usernamebox,"standard_user");
+    }
+
+    public void writecorrectpasswordforfield(String correctpasswordd) {
+        driver.findElement(passwordd).click();
+        elementHelper.sendKey(passwordd,"secret_sauce");
+    }
+
+    public void checksuccessfull() {
+        elementHelper.checkVisible(producttext);
 
     }
 }
