@@ -16,11 +16,11 @@ By errorMessage=By.cssSelector("h3[data-test='error']");
  elementHelper.checkVisible(errorMessage);
 
 //●to check the "word"
-static By logintitle = By.cssSelector(".oxd-text.oxd-text--h5.orangehrm-login-title");
-driver.get("https://xxx.com/");
-        WebElement title = driver.findElement(logintitle);
-        String titletext = title.getText();
-        assertEquals(titletext, "Login");
+static By Invalidmessage=By.cssSelector(".oxd-text.oxd-text--p.oxd-alert-content-text");
+
+        WebElement errormessage = driver.findElement(Invalidmessage);
+        String errormessage = errormessage.getText();
+        assertEquals(errormessage, "Invalid credentials\n");
 
 
 //●to check the product if it is true
