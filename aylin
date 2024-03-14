@@ -15,7 +15,12 @@ driver.findElement(loginbutton).click();
 By errorMessage=By.cssSelector("h3[data-test='error']");
  elementHelper.checkVisible(errorMessage);
 
-
+//●to check the "word"
+static By logintitle = By.cssSelector(".oxd-text.oxd-text--h5.orangehrm-login-title");
+driver.get("https://xxx.com/");
+        WebElement title = driver.findElement(logintitle);
+        String titletext = title.getText();
+        assertEquals(titletext, "Login");
 
 
 //●to check the product if it is true
