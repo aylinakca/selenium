@@ -5,6 +5,10 @@ driver.get("https://example.com");
 static By loginbutton=By.cssSelector("#login-button");
 driver.findElement(loginbutton).click();
 
+//●click and write 
+ By usernamebox=By.cssSelector("#user-name");
+ driver.findElement(usernamebox).click();
+        elementHelper.sendKey(usernamebox,"abcdefg"); ya da driver.findElement(usernamebox).sendKeys("abcdefg");
 
 
 //●to see the error message
