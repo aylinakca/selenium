@@ -19,6 +19,11 @@ public class LoginPage {
 
      static By loginbutton=By.cssSelector("#login-button");
     By errorMessage=By.cssSelector("h3[data-test='error']");
+    By usernamebox=By.cssSelector("#user-name");
+    By passwordd=By.cssSelector("#password");
+
+
+
 
     public void userathomepage() {
         driver.get("https://www.saucedemo.com");
@@ -32,5 +37,31 @@ public class LoginPage {
 
     public void checkMessage(String username) {
         elementHelper.checkVisible(errorMessage);
+    }
+
+    public void writeforusernamefield(String username) {
+        driver.findElement(usernamebox).click();
+        elementHelper.sendKey(usernamebox,"abcdefg");
+
+    }
+
+    public void writepasswordfield(String password) {
+        driver.findElement(passwordd).click();
+        elementHelper.sendKey(passwordd,"12345");
+    }
+
+    public void writecorrectusernameforusernamefield(String correctusername) {
+        driver.findElement(usernamebox).click();
+        elementHelper.sendKey(usernamebox,"standard_user");
+    }
+
+    public void writefalsepassword(String falsepassword) {
+        driver.findElement(passwordd).click();
+        elementHelper.sendKey(passwordd,"12345");
+    }
+
+    public void dontmatchmessage(String dontmatch) {
+        elementHelper.checkVisible(errorMessage);
+
     }
 }
