@@ -23,6 +23,9 @@ static By Invalidmessage=By.cssSelector(".oxd-text.oxd-text--p.oxd-alert-content
         assertEquals(errormessage, "Invalid credentials\n");
 
 
+//●scroll page down
+JavascriptExecutor js=(JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,350)");
 
 //●select and delete words in the box
 WebElement firstname = driver.findElement(By.cssSelector("input[placeholder='First Name']"));
