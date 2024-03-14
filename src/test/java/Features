@@ -1,4 +1,4 @@
-@DemoMart
+@SauceDemoMart
 Feature: SauceDemoMart Check Test Cases
 
 
@@ -46,3 +46,13 @@ Feature: SauceDemoMart Check Test Cases
 
 
 
+@CorrectLogin
+Scenario Outline: Correct Username & Correct Password
+  Given User at home page
+  When write correct "<username>" for username field
+  When write Correct "<password>" for password field
+  When Click login button
+  Then Check Successful login
+  Examples:
+    |username              |password       |
+    |standard_user         |secret_sauce   |
