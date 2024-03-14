@@ -1,4 +1,4 @@
-@SauceDemoMart
+@DemoMart
 Feature: SauceDemoMart Check Test Cases
 
 
@@ -11,5 +11,38 @@ Feature: SauceDemoMart Check Test Cases
       |error                    |
       |Username is required     |
 
+    @EmptyPassword
+    Scenario Outline: Empty Password
+      Given User at home page
+      When write "<username>" for username field
+      When Click login button
+      Then Check "<error>" message about password
+      Examples:
+      |username |error               |
+      |abcdefg  |Password is required|
 
-  
+      @EmptyUsername
+      Scenario Outline: Empty Username
+        Given User at home page
+        When write "<password>" for password field
+        When Click login button
+        Then Check "<error>" message about password
+
+        Examples:
+        |password|error|
+        |12345   |Username is required|
+
+        @Falselogin
+        Scenario Outline: Correct username & false password
+          Given User at home page
+          When write correct "<username>" for username field
+          When write false "<password>" for password field
+          When Click login button
+          Then check "<error>"message about dont't match
+          Examples:
+          |usermame     |error                                                      |password|
+          |standard_user|Username and password do not match any user in this service|12345   |
+
+
+
+
