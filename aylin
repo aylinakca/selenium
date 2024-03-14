@@ -76,6 +76,10 @@ WebElement element = driver.findElement(By.id("elementId"));
 
 
 
+ //●test only "a" case
+test runner-tags"a"
+
+
 
 
         
