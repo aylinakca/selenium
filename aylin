@@ -19,7 +19,7 @@ By errorMessage=By.cssSelector("h3[data-test='error']");
 static By Invalidmessage=By.cssSelector(".oxd-text.oxd-text--p.oxd-alert-content-text");
 
         WebElement errormessage = driver.findElement(Invalidmessage);
-        String errormessage = errormessage.getText();
+        errormessageText = errormessage.getText();
         assertEquals(errormessage, "Invalid credentials\n");
 
 
