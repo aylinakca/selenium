@@ -27,4 +27,33 @@ public class Loginpagestepdefinition {
         loginPage.checkMessage(username);
     }
 
+    @When("write {string} for username field")
+    public void writeForUsernameField(String Username) {
+        loginPage.writeforusernamefield(Username);
+    }
+
+    @Then("Check {string} message about password")
+    public void checkMessageAboutPassword(String error) {
+        loginPage.checkMessage(error);
+    }
+
+    @When("write {string} for password field")
+    public void writeForPasswordField(String password) {
+        loginPage.writepasswordfield(password);
+    }
+
+    @When("write correct {string} for username field")
+    public void writeCorrectForUsernameField(String correctusername) {
+        loginPage.writecorrectusernameforusernamefield(correctusername);
+    }
+
+    @When("write false {string} for password field")
+    public void writeFalseForPasswordField(String falsepassword) {
+        loginPage.writefalsepassword(falsepassword);
+    }
+
+    @Then("check {string}message about dont't match")
+    public void checkMessageAboutDontTMatch(String dontmatch) {
+        loginPage.dontmatchmessage(dontmatch);
+    }
 }
