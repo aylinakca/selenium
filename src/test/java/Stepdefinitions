@@ -56,4 +56,15 @@ public class Loginpagestepdefinition {
     public void checkMessageAboutDontTMatch(String dontmatch) {
         loginPage.dontmatchmessage(dontmatch);
     }
+
+
+    @When("write Correct {string} for password field")
+    public void writeCorrectForPasswordField(String correctpasswordd) {
+        loginPage.writecorrectpasswordforfield(correctpasswordd);
+    }
+
+    @Then("Check Successful login")
+    public void checkSuccessfulLogin() {
+        loginPage.checksuccessfull();
+    }
 }
